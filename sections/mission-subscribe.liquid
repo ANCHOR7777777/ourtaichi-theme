@@ -1,0 +1,78 @@
+<div class="section-mission-subscribe">
+  <div class="page-width">
+    <div class="mission-subscribe-wrapper">
+      <div class="mission-content">
+        <h2>{{ section.settings.mission_title }}</h2>
+        <p>{{ section.settings.mission_text }}</p>
+      </div>
+      <div class="subscribe-form">
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="newsletter-form__field-wrapper">
+            <div class="field">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="field__input"
+                value=""
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                placeholder="{{ 'newsletter.label' | t }}"
+                required
+              >
+              <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                {{ 'newsletter.label' | t }}
+              </label>
+              <button type="submit" class="newsletter-form__button field__button" name="commit">
+                {{ 'newsletter.button_label' | t }}
+              </button>
+            </div>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mission-subscribe-wrapper {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  @media screen and (min-width: 750px) {
+    .mission-subscribe-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Mission & Subscribe",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mission_title",
+      "label": "Mission Title",
+      "default": "Our Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text",
+      "label": "Mission Text",
+      "default": "Share our mission with your customers."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mission & Subscribe"
+    }
+  ]
+}
+{% endschema %}

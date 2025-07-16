@@ -1,0 +1,47 @@
+{% comment %}
+  For DRM video streaming, integrate Single or Shopify Digital Downloads in production.
+{% endcomment %}
+
+<div class="page-width page-my-courses">
+  <h1 class="h2_">{{ page.title }}</h1>
+  {% if customer %}
+    <h2>My Purchased Courses</h2>
+    {% assign has_courses = false %}
+    <div class="course-list">
+      {% for order in customer.orders %}
+        {% for line_item in order.line_items %}
+          {% if line_item.product.requires_shipping == false %}
+            {% assign has_courses = true %}
+            <div class="course-card">
+              {% if line_item.product.featured_image %}
+                <a href="{{ line_item.product.url }}">
+                  <img
+                    src="{{ line_item.product.featured_image | image_url: width: 400 }}"
+                    alt="{{ line_item.product.featured_image.alt | escape }}"
+                    loading="lazy"
+                    width="200"
+                    height="200"
+                  >
+                </a>
+              {% endif %}
+              <div class="course-card-content">
+                <h3>{{ line_item.product.title }}</h3>
+                <p>Order #{{ order.name }}</p>
+                <a href="{{ line_item.product.url }}" class="button">View details / access content</a>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+
+      {% if has_courses == false %}
+        <p>
+          You have not purchased any online courses yet.
+          <a href="{{ routes.all_products_collection_url }}">Browse our courses</a>.
+        </p>
+      {% endif %}
+    </div>
+  {% else %}
+    <p>Please <a href="{{ routes.account_login_url }}">log in</a> to see your purchased courses.</p>
+  {% endif %}
+</div>

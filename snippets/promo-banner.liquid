@@ -1,0 +1,48 @@
+<style>
+  .promo-banner {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--promo-bg-color, {{ settings.promo_bg_color }});
+    color: var(--promo-text-color, {{ settings.promo_text_color }});
+  }
+  .promo-banner p {
+    margin: 0;
+  }
+  .promo-banner__close {
+    position: absolute;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+</style>
+
+<div id="promo-banner" class="promo-banner">
+  <p>{{ settings.promo_text }}</p>
+  <button class="promo-banner__close" aria-label="Dismiss banner">&times;</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('promo-banner');
+    const closeButton = banner.querySelector('.promo-banner__close');
+
+    if (localStorage.getItem('promo_closed') === 'true') {
+      banner.style.display = 'none';
+    }
+
+    closeButton.addEventListener('click', () => {
+      banner.style.display = 'none';
+      localStorage.setItem('promo_closed', 'true');
+    });
+  });
+</script>

@@ -98,6 +98,60 @@
           "on_secondary_button": "secondary_button_label",
           "secondary_button_border": "secondary_button_label"
         }
+      },
+      {
+        "type": "header",
+        "content": "Brand"
+      },
+      {
+        "type": "color",
+        "id": "brand_accent",
+        "label": "Brand Accent Color",
+        "default": "#D2A679"
+      },
+      {
+        "type": "header",
+        "content": "Promo Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_promo_banner",
+        "label": "Enable promo banner",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "promo_text",
+        "label": "Promo text",
+        "default": "Announce something here"
+      },
+      {
+        "type": "color",
+        "id": "promo_bg_color",
+        "label": "Promo banner background",
+        "default": "#D2A679"
+      },
+      {
+        "type": "color",
+        "id": "promo_text_color",
+        "label": "Promo banner text color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "Cart Discount"
+      },
+      {
+        "type": "number",
+        "id": "discount_threshold",
+        "label": "Discount threshold",
+        "info": "Amount in your currency (e.g., 100 for $100)."
+      },
+      {
+        "type": "text",
+        "id": "discount_message",
+        "label": "Discount message",
+        "default": "Spend {{amount}} more to unlock free shipping!"
       }
     ]
   },

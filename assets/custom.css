@@ -1,0 +1,33 @@
+:root {
+  --brand-accent: #D2A679;
+}
+
+.button--primary {
+  background-color: var(--brand-accent);
+}
+
+.course-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.course-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.course-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+} 

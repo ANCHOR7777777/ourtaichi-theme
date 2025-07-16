@@ -1,0 +1,19 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "image": [
+      {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}
+    ],
+    "description": {{ product.description | strip_html | json }},
+    "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    "offers": {
+      "@type": "Offer",
+      "url": {{ product.url | within: collection | prepend: shop.url | json }},
+      "priceCurrency": {{ cart.currency.iso_code | json }},
+      "price": "{{ product.price | divided_by: 100.00 }}",
+      "availability": "https://schema.org/{% if product.selected_or_first_available_variant.available %}InStock{% else %}OutOfStock{% endif %}"
+    }
+  }
+</script>

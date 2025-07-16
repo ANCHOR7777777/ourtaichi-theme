@@ -1,0 +1,131 @@
+{%- liquid
+  assign unique_id = 'hero-carousel-' | append: section.id
+-%}
+
+<style>
+  #{{ unique_id }} .hero-carousel-container {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+    mask: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+  }
+
+  #{{ unique_id }} .hero-carousel-scroller {
+    display: flex;
+    width: max-content;
+    flex-wrap: nowrap;
+  }
+
+  #{{ unique_id }} .hero-carousel-scroller.playing {
+    animation: scroll var(--scroll-duration, 40s) linear infinite;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-1 * var(--scroll-width, 1000px)));
+    }
+  }
+
+  #{{ unique_id }} .hero-carousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 60vh;
+    padding: 0 1rem;
+  }
+
+  #{{ unique_id }} .hero-carousel-slide img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 750px) {
+    #{{ unique_id }} .hero-carousel-slide {
+      height: 80vh;
+    }
+  }
+</style>
+
+<hero-carousel
+  id="{{ unique_id }}"
+  class="section"
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-speed="{{ section.settings.speed }}"
+  {% if section.settings.autoplay %}
+    onmouseenter="this.querySelector('.hero-carousel-scroller').classList.remove('playing')"
+    onmouseleave="this.querySelector('.hero-carousel-scroller').classList.add('playing')"
+  {% endif %}
+  aria-live="polite"
+>
+  <div class="hero-carousel-container">
+    <div class="hero-carousel-scroller">
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="hero-carousel-slide" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              {%- assign image_alt = block.settings.image.alt
+                | default: section.settings.title
+                | default: 'Slide'
+                | escape
+              -%}
+              {{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: image_alt, fetchpriority: forloop.first ? 'high' : 'auto', decoding: forloop.first ? 'async' : 'auto' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {% for i in (1..5) %}
+          <div class="hero-carousel-slide">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endfor %}
+      {%- endif -%}
+    </div>
+  </div>
+</hero-carousel>
+
+{% schema %}
+{
+  "name": "Hero Carousel",
+  "tag": "section",
+  "class": "section-hero-carousel",
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "label": "Animation Speed",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_picker",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Carousel"
+    }
+  ]
+}
+{% endschema %}

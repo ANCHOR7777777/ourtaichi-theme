@@ -1,0 +1,78 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<div class="section-product-grid">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="h2_">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    <div class="product-grid-wrapper">
+      {%- liquid
+        assign collection = section.settings.collection
+        assign limit = section.settings.limit
+        if collection.products.size > 0
+          for product in collection.products limit: limit
+            render 'card-product', product_card_product: product, show_vendor: false
+          endfor
+        else
+          assign collection_handle = collection.handle
+          for item in (1..limit)
+            assign pd = collections[collection_handle].products[forloop.index0]
+            if pd
+              render 'card-product-placeholder', product: pd
+            endif
+          endfor
+        endif
+      -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-product-grid .product-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-product-grid .product-grid-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "label": "Number of products to show",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}

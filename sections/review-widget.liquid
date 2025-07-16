@@ -1,0 +1,50 @@
+{% comment %}
+  This section is a placeholder for a product reviews app.
+  Install a reviews app like Shopify Product Reviews, Loox, or Yotpo,
+  and replace the div below with the app's provided snippet.
+  The ID 'shopify-product-reviews' is a common convention for many review apps.
+{% endcomment %}
+
+{%- if section.settings.enable_stars or section.settings.title != blank -%}
+  <div class="section-review-widget page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="h2_">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div id="shopify-product-reviews">
+      <!-- Review app content will be injected here -->
+      {%- if section.settings.enable_stars -%}
+        <div style="--rating: 3.5;" aria-label="Rating of 3.5 out of 5 stars.">
+          <!-- Placeholder for star rating -->
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Review Widget",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_stars",
+      "label": "Show star rating placeholder",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review Widget"
+    }
+  ]
+}
+{% endschema %}
