@@ -43,3 +43,39 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-accent-1);
   color: #FFFFFF;
 }
+
+.header--middle-left .header__inline-menu {
+  display: none;
+}
+nav[aria-label="Main navigation"] {
+    display: contents;
+}
+.header__heading {
+    grid-area: logo;
+}
+@media screen and (min-width: 990px) {
+  .header--has-menu .header__grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "nav-left logo nav-right";
+    align-items: center;
+  }
+  
+  .header--middle-center .header__grid {
+     grid-template-areas: "nav-left logo nav-right";
+  }
+
+  .header--has-menu .header__inline-menu {
+    display: block;
+  }
+
+  .header__inline-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .header__icons {
+    justify-self: end;
+  }
+}
