@@ -84,4 +84,38 @@ div[id^="collection-"] .card__heading a {
 /* Adjust spacing for the card content */
 div[id^="collection-"] .card__content {
   padding: 15px;
+}
+
+/* 5. Centered & Split Navigation Styles */
+@media screen and (min-width: 990px) {
+  .header--middle-center .header__heading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Ensure logo is above navs */
+  }
+
+  .header--middle-center {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header--middle-center .header__inline-menu {
+    display: flex;
+  }
+
+  .header--middle-center .header__inline-menu:first-of-type {
+    justify-content: flex-end;
+  }
+
+  .header--middle-center .header__inline-menu:last-of-type {
+    justify-content: flex-start;
+  }
+
+  .header--middle-center .header__icons {
+    grid-column: 3;
+    justify-self: end;
+  }
 } 
