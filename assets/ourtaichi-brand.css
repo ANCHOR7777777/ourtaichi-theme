@@ -86,36 +86,32 @@ div[id^="collection-"] .card__content {
   padding: 15px;
 }
 
-/* 5. Centered & Split Navigation Styles */
+/* 5. Centered & Split Navigation Styles (Corrected) */
 @media screen and (min-width: 990px) {
-  .header--middle-center .header__heading {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; /* Ensure logo is above navs */
-  }
-
-  .header--middle-center {
+  /* 1. Establish the 3-column grid on the header element */
+  .header.header--middle-center {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr; /* [Left Nav] [Logo] [Right Group] */
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem; /* Space between the three main groups */
   }
 
-  .header--middle-center .header__inline-menu {
-    display: flex;
-  }
-
-  .header--middle-center .header__inline-menu:first-of-type {
-    justify-content: flex-end;
-  }
-
-  .header--middle-center .header__inline-menu:last-of-type {
-    justify-content: flex-start;
-  }
-
-  .header--middle-center .header__icons {
-    grid-column: 3;
+  /* 2. Target the LEFT menu's container and align it to the right of its column */
+  .header--middle-center > .header__inline-menu {
     justify-self: end;
+  }
+
+  /* 3. The Logo container sits in the middle column */
+  .header--middle-center .header__heading {
+    grid-column: 2;
+  }
+
+  /* 4. Target the RIGHT-SIDE GROUP and make it a flex container */
+  .header--middle-center .header-right-group {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes menu left, icons right within the group */
+    width: 100%;
   }
 } 
