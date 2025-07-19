@@ -9,39 +9,12 @@
  */
 {
   "sections": {
-    "hero_carousel_4jMXVQ": {
-      "type": "hero-carousel",
-      "blocks": {
-        "image_picker_FjVUhP": {
-          "type": "image_picker",
-          "settings": {
-            "image": "shopify://shop_images/small-business-interior.jpg"
-          }
-        },
-        "image_picker_rwBpr3": {
-          "type": "image_picker",
-          "settings": {
-            "image": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "image_picker_FjVUhP",
-        "image_picker_rwBpr3"
-      ],
-      "name": "Hero Carousel",
-      "settings": {
-        "speed": 60,
-        "autoplay": true
-      }
-    },
     "main": {
       "type": "main-404",
       "settings": {}
     }
   },
   "order": [
-    "hero_carousel_4jMXVQ",
     "main"
   ]
 }
