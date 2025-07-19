@@ -17,7 +17,7 @@
         "announcement_FgyLAq": {
           "type": "announcement",
           "settings": {
-            "text": "Please Check The Status Of Your Internet And Refresh Your Page",
+            "text": "Welcome to Taichi-Zneji, hope you can find the course that suits you.",
             "link": ""
           }
         }
@@ -39,10 +39,10 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "middle-center",
         "mobile_logo_position": "center",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "show_social_on_header": true,
