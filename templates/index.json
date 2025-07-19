@@ -9,55 +9,36 @@
  */
 {
   "sections": {
+    "founder_intro": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/master_portrait.jpg",
+        "height": "adapt_image",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "scheme-1"
+      }
+    },
     "hero_carousel": {
       "type": "hero-carousel",
-      "settings": {}
-    },
-    "news_feed": {
-      "type": "news-feed",
-      "settings": {}
-    },
-    "product_grid_1": {
-      "type": "product-grid",
       "settings": {
-        "title": "New Courses"
+        "speed": 80,
+        "autoplay": true
       }
     },
-    "product_grid_2": {
-      "type": "product-grid",
+    "judge_me_reviews": {
+      "type": "apps",
       "settings": {
-        "title": "Daily Routine"
+        "include_margins": true
       }
-    },
-    "product_grid_3": {
-      "type": "product-grid",
-      "settings": {
-        "title": "Internal Organs"
-      }
-    },
-    "product_grid_4": {
-      "type": "product-grid",
-      "settings": {
-        "title": "Specific Routine"
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "settings": {}
-    },
-    "mission_subscribe": {
-      "type": "mission-subscribe",
-      "settings": {}
     }
   },
   "order": [
+    "founder_intro",
     "hero_carousel",
-    "news_feed",
-    "product_grid_1",
-    "product_grid_2",
-    "product_grid_3",
-    "product_grid_4",
-    "testimonials",
-    "mission_subscribe"
+    "judge_me_reviews"
   ]
 }
