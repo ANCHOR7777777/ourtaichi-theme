@@ -86,40 +86,36 @@ div[id^="collection-"] .card__content {
   padding: 15px;
 }
 
-/* 5. Centered & Split Navigation Styles (Corrected) */
+/* 5. Centered & Split Navigation Styles (Final Corrected Version) */
 @media screen and (min-width: 990px) {
   /* 1. Establish the 3-column grid on the header element */
   .header.header--middle-center {
     display: grid;
     grid-template-columns: 1fr auto 1fr; /* [Left Nav] [Logo] [Right Group] */
-    align-items: center; /* This will vertically align navs with the logo */
-    position: relative; /* Needed for absolute positioning of icons */
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    align-items: center;
+    gap: 3rem; /* Adjust gap as needed for more open space */
   }
 
-  /* 2. Target the LEFT menu's container and align it to the right of its column */
-  .header--middle-center > .header__inline-menu {
+  /* 2. Target the LEFT menu's container and align its content to the right */
+  .header--middle-center nav.header__inline-menu {
     justify-self: end;
-    padding-right: 4rem; /* Increase space next to logo */
   }
 
   /* 3. The Logo container sits in the middle column */
   .header--middle-center .header__heading {
-    grid-column: 2;
+    grid-column: 2 / 3;
   }
 
-  /* 4. Target the RIGHT menu and add spacing */
+  /* 4. Target the RIGHT-SIDE GROUP and align it to the left of its column */
+  .header--middle-center .header-right-group {
+    grid-column: 3 / 4;
+    display: flex; /* Use flex to align items within this group */
+    align-items: center;
+    justify-self: start;
+  }
+
+  /* 5. Add a gap between the right menu and the icons */
   .header--middle-center .header-right-group .header__inline-menu {
-    padding-left: 4rem; /* Increase space next to logo */
-  }
-
-  /* 5. Absolutely position the icons to the top right */
-  .header--middle-center .header__icons {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    padding-right: 3rem; /* Adjust as needed for spacing from the edge */
+    margin-right: 2.5rem;
   }
 } 
