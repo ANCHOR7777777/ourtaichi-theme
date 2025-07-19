@@ -17,7 +17,7 @@
 
 /* Apply the serene background color to the entire site */
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-background) !important;
   color: var(--color-text-primary);
   font-family: var(--font-family-body);
 }
@@ -58,26 +58,26 @@ button:hover {
   background-color: #486564 !important; /* A slightly darker shade for hover */
 }
 
-/* 4. Beautify the Featured Courses Section */
+/* 4. Beautify the Featured Courses Section (Diagnostic Version) */
 
-/* Target the container for the featured collection section using a more robust attribute selector */
-div[id^="collection-"] .card-wrapper {
-  background-color: var(--color-surface);
-  border-radius: 8px; /* Softens the corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Adds a subtle, premium shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Ensures the image respects the rounded corners */
+/* Use a hyper-specific selector to target the product cards within a featured collection */
+.section--featured-collection .card-wrapper.product-card-wrapper {
+  background-color: var(--color-surface) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden !important;
 }
 
-/* Add a hover effect to lift the card */
-div[id^="collection-"] .card-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+/* Hover effect with high specificity */
+.section--featured-collection .card-wrapper.product-card-wrapper:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Ensure the course title uses our brand's primary color */
-div[id^="collection-"] .card-information .card__heading a {
-  color: var(--color-primary);
+/* Title color with high specificity */
+.section--featured-collection .card__heading a {
+  color: var(--color-primary) !important;
 }
 
 /* Adjust spacing for the card content */
