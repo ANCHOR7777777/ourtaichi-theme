@@ -1,6 +1,8 @@
 {% comment %}
-  Renders a split menu for the header.
-  - menu: The menu to render
+  Renders a menu for the header.
+
+  Usage:
+  {% render 'header-menu' %}
 {% endcomment %}
 
 <nav class="header__inline-menu">
@@ -9,8 +11,8 @@
       <li>
         {%- if link.links != blank -%}
           <details-disclosure>
-            <details>
-              <summary class="header__menu-item list-menu__item focus-inset">
+            <details id="Details-HeaderMenu-{{ forloop.index }}">
+              <summary class="header__menu-item list-menu__item link focus-inset">
                 <span
                   {%- if link.child_active %}
                     class="header__active-menu-item"
@@ -20,12 +22,16 @@
                 </span>
                 {% render 'icon-caret' %}
               </summary>
-              <ul class="header__submenu list-menu motion-reduce" tabindex="-1">
+              <ul
+                class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce"
+                role="list"
+                tabindex="-1"
+              >
                 {%- for childlink in link.links -%}
                   <li>
                     <a
                       href="{{ childlink.url }}"
-                      class="header__menu-item list-menu__item link link--text focus-inset"
+                      class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} menu-item--active{% endif %}"
                       {% if childlink.current %}
                         aria-current="page"
                       {% endif %}
@@ -40,7 +46,7 @@
         {%- else -%}
           <a
             href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
+            class="header__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-item--active{% endif %}"
             {% if link.current %}
               aria-current="page"
             {% endif %}
