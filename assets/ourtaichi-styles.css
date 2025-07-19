@@ -1,0 +1,62 @@
+/* 1. Import Google Fonts for OurTaiChi Theme */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@700&display=swap');
+
+/* 2. Define OurTaiChi Brand Colors and Fonts as CSS Variables */
+:root {
+  /* Color Palette */
+  --color-background: #F5F5F3; /* Serene Beige - for main page background */
+  --color-surface: #FFFFFF;      /* White - for cards and surfaces */
+  --color-primary: #5A7D7C;      /* Jade Green/Calm Teal - for buttons, links, and accents */
+  --color-text-primary: #333333; /* Dark Gray - for primary text */
+  --color-text-secondary: #555555;/* Medium Gray - for secondary text */
+  --color-border: #E0E0E0;      /* Light Gray - for borders and separators */
+
+  /* Typography */
+  --font-family-heading: 'Noto Serif SC', serif;
+  --font-family-body: 'Noto Sans SC', sans-serif;
+}
+
+/* 3. Apply Global Styles */
+
+/* Apply the serene background color to the entire site */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+}
+
+/* Style all headings with the elegant serif font */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-family-heading);
+  color: var(--color-text-primary);
+}
+
+/* Style links and buttons with the primary brand color */
+a,
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover,
+.link:hover {
+  opacity: 0.8;
+}
+
+.button,
+button {
+  background-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-family-body) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.button:hover,
+button:hover {
+  background-color: #486564 !important; /* A slightly darker shade for hover */
+} 
