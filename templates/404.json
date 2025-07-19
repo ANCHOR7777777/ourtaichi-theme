@@ -1,10 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "hero_carousel_4jMXVQ": {
+      "type": "hero-carousel",
+      "blocks": {
+        "image_picker_FjVUhP": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify://shop_images/small-business-interior.jpg"
+          }
+        },
+        "image_picker_rwBpr3": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_picker_FjVUhP",
+        "image_picker_rwBpr3"
+      ],
+      "name": "Hero Carousel",
+      "settings": {
+        "speed": 60,
+        "autoplay": true
+      }
+    },
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "settings": {}
     }
   },
   "order": [
+    "hero_carousel_4jMXVQ",
     "main"
   ]
 }
