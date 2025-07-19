@@ -60,14 +60,8 @@ button:hover {
 
 /* 4. Beautify the Featured Courses Section */
 
-/* Target the container for the featured collection section */
-.section-featured-collection {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-/* Style each individual course/product card */
-.section-featured-collection .card-wrapper {
+/* Target the container for the featured collection section using a more robust attribute selector */
+div[id^="collection-"] .card-wrapper {
   background-color: var(--color-surface);
   border-radius: 8px; /* Softens the corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Adds a subtle, premium shadow */
@@ -76,17 +70,17 @@ button:hover {
 }
 
 /* Add a hover effect to lift the card */
-.section-featured-collection .card-wrapper:hover {
+div[id^="collection-"] .card-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Ensure the course title uses our brand's primary color */
-.section-featured-collection .card-information .card__heading a {
+div[id^="collection-"] .card-information .card__heading a {
   color: var(--color-primary);
 }
 
 /* Adjust spacing for the card content */
-.section-featured-collection .card__content {
+div[id^="collection-"] .card__content {
   padding: 15px;
 } 
