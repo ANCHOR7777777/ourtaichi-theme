@@ -7,14 +7,32 @@
   media="print"
   onload="this.media='all'"
 >
-
+<link
+  rel="stylesheet"
+  href="{{ 'component-cart.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link
+    rel="stylesheet"
+    href="{{ 'component-deferred-media.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {%- if section.settings.menu_type_desktop == 'mega' -%}
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript><link href="{{ 'component-mega-menu.css' | asset_url }}" rel="stylesheet" type="text/css"></noscript>
 {%- endif -%}
+
+<noscript><link href="{{ 'component-list-menu.css' | asset_url }}" rel="stylesheet" type="text/css"></noscript>
+<noscript><link href="{{ 'component-search.css' | asset_url }}" rel="stylesheet" type="text/css"></noscript>
+<noscript><link href="{{ 'component-cart-notification.css' | asset_url }}" rel="stylesheet" type="text/css"></noscript>
+<noscript><link href="{{ 'component-cart.css' | asset_url }}" rel="stylesheet" type="text/css"></noscript>
 
 <style>
   header-drawer {
@@ -248,7 +266,6 @@
         {%- endif -%}
       </div>
       {% render 'header-search', input_id: 'Search-In-Modal' %}
-
       {%- if section.settings.show_social_on_header -%}
         {%- render 'social-icons', class: 'header__icons' -%}
       {%- endif -%}
@@ -565,8 +582,7 @@
         }
       ],
       "default": "on-scroll-up",
-      "label": "t:sections.header.settings.sticky_header_type.label",
-      "info": "t:sections.header.settings.sticky_header_type.info"
+      "label": "t:sections.header.settings.sticky_header_type.label"
     },
     {
       "type": "checkbox",
