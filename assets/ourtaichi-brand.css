@@ -58,25 +58,26 @@ button:hover {
   background-color: #486564 !important; /* A slightly darker shade for hover */
 }
 
-/* 4. Beautify the Featured Courses Section (Diagnostic Version) */
+/* 4. Beautify the Featured Courses Section (Final Version) */
 
-/* Use a hyper-specific selector to target the product cards within a featured collection */
-.section--featured-collection .card-wrapper.product-card-wrapper {
+/* Target the specific card element within the featured collection */
+div[id^="collection-"] .card {
   background-color: var(--color-surface) !important;
   border-radius: 8px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   overflow: hidden !important;
+  border: none !important; /* Remove any default theme borders */
 }
 
-/* Hover effect with high specificity */
-.section--featured-collection .card-wrapper.product-card-wrapper:hover {
+/* Add a hover effect to lift the card */
+div[id^="collection-"] .card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Title color with high specificity */
-.section--featured-collection .card__heading a {
+/* Ensure the course title uses our brand's primary color */
+div[id^="collection-"] .card__heading a {
   color: var(--color-primary) !important;
 }
 
