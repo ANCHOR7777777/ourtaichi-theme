@@ -119,3 +119,65 @@ div[id^="collection-"] .card__content {
     margin-right: 2.5rem;
   }
 } 
+
+/* Base styles for the split header layout */
+.header--middle-center {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Left Menu Alignment */
+.header--middle-center .header__inline-menu:first-child {
+  justify-self: end;
+}
+
+/* Right Menu & Icons Alignment */
+.header--middle-center .header__icons {
+  justify-self: start;
+}
+
+/* Center Logo */
+.header--middle-center .header__heading {
+  margin: 0;
+  grid-column: 2; /* Explicitly place in the center column */
+}
+
+.header__heading-logo-wrapper {
+  display: block;
+}
+
+.header__heading-logo {
+  border-radius: 50%; /* Make the logo circular */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border: 3px solid var(--color-background); /* Optional: add a border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+  width: 120px; /* Define a fixed width */
+  height: 120px; /* Define a fixed height to match width for a perfect circle */
+}
+
+/* Align icons and menu items in the right group */
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* General alignment for all items in header */
+.header--middle-center .header__inline-menu ul,
+.header--middle-center .header__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Spacing between menu items/icons */
+}
+
+/* Remove default list styling */
+.header__inline-menu .list-menu {
+    padding: 0;
+    margin: 0;
+}
+
+.header__inline-menu .list-menu li {
+    list-style: none;
+} 
