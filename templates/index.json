@@ -1,65 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-      }
-    },
-    "hero_carousel_HETeLE": {
+    "hero_carousel": {
       "type": "hero-carousel",
-      "settings": {
-      }
+      "settings": {}
     },
-    "news_feed_jXbnjR": {
+    "news_feed": {
       "type": "news-feed",
-      "settings": {
-      }
+      "settings": {}
     },
-    "product_grid_C49WVi": {
+    "product_grid_1": {
       "type": "product-grid",
       "settings": {
         "title": "New Courses"
       }
     },
-    "product_grid_qVEkTE": {
+    "product_grid_2": {
       "type": "product-grid",
       "settings": {
         "title": "Daily Routine"
       }
     },
-    "product_grid_DEMLLJ": {
+    "product_grid_3": {
       "type": "product-grid",
       "settings": {
         "title": "Internal Organs"
       }
     },
-    "product_grid_AkeaPj": {
+    "product_grid_4": {
       "type": "product-grid",
       "settings": {
         "title": "Specific Routine"
       }
     },
-    "testimonials_F9aAfN": {
+    "testimonials": {
       "type": "testimonials",
-      "settings": {
-      }
+      "settings": {}
     },
-    "mission_subscribe_KAmQdb": {
+    "mission_subscribe": {
       "type": "mission-subscribe",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
-    "main",
-    "hero_carousel_HETeLE",
-    "news_feed_jXbnjR",
-    "product_grid_C49WVi",
-    "product_grid_qVEkTE",
-    "product_grid_DEMLLJ",
-    "product_grid_AkeaPj",
-    "testimonials_F9aAfN",
-    "mission_subscribe_KAmQdb"
+    "hero_carousel",
+    "news_feed",
+    "product_grid_1",
+    "product_grid_2",
+    "product_grid_3",
+    "product_grid_4",
+    "testimonials",
+    "mission_subscribe"
   ]
 }
