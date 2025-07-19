@@ -120,7 +120,6 @@ div[id^="collection-"] .card__content {
   }
 } 
 
-/* Base styles for the split header layout */
 .header--middle-center {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -128,56 +127,56 @@ div[id^="collection-"] .card__content {
   gap: 2rem;
 }
 
-/* Left Menu Alignment */
-.header--middle-center .header__inline-menu:first-child {
+.header--middle-center .header__heading {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.header--middle-center .header__inline-menu:first-of-type {
+  grid-column: 1;
   justify-self: end;
 }
 
-/* Right Menu & Icons Alignment */
-.header--middle-center .header__icons {
+.header--middle-center .header-right-group {
+  grid-column: 3;
   justify-self: start;
-}
-
-/* Center Logo */
-.header--middle-center .header__heading {
-  margin: 0;
-  grid-column: 2; /* Explicitly place in the center column */
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Increased gap for better spacing */
 }
 
 .header__heading-logo-wrapper {
-  display: block;
+  display: inline-block; /* Changed for better centering behavior */
+  vertical-align: middle;
 }
 
 .header__heading-logo {
-  border-radius: 50%; /* Make the logo circular */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  border: 3px solid var(--color-background); /* Optional: add a border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
-  width: 120px; /* Define a fixed width */
-  height: 120px; /* Define a fixed height to match width for a perfect circle */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100px; /* Adjusted size */
+  height: 100px;
+  display: block; /* Ensure it behaves as a block element for sizing */
 }
 
-/* Align icons and menu items in the right group */
-.header-right-group {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-/* General alignment for all items in header */
-.header--middle-center .header__inline-menu ul,
 .header--middle-center .header__icons {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem; /* Spacing between menu items/icons */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Spacing between icons */
 }
 
-/* Remove default list styling */
-.header__inline-menu .list-menu {
-    padding: 0;
-    margin: 0;
+.header--middle-center .list-menu--inline {
+  gap: 2rem;
 }
 
-.header__inline-menu .list-menu li {
-    list-style: none;
+/* Ensure icons are a consistent size */
+.header__icon .svg-wrapper img {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-count-bubble {
+    top: -0.5rem;
+    right: -0.8rem;
 } 
