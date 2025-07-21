@@ -19,6 +19,22 @@
 
 .header__right-group {
     justify-content: flex-start;
+    display: flex; /* Ensure flex is explicitly set */
+    align-items: center; /* Vertically align items */
+}
+
+.header__right-group .header__inline-menu {
+    margin-right: 1.5rem; /* Add some space between menu and icons */
+}
+
+.header__icons {
+    display: flex !important; /* Force display flex to override other styles */
+    align-items: center;
+    gap: 1.5rem; /* Adjust gap between icons */
+}
+
+.header__icon {
+    display: block !important; /* Ensure all icons are visible */
 }
 
 .header__heading {
@@ -37,15 +53,4 @@
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
-}
-
-.header__icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 1rem;
-}
-
-.header__icon {
-    display: block;
 } 
