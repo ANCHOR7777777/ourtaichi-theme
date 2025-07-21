@@ -242,14 +242,18 @@
               >
                 <span class="visually-hidden">{{ 'general.search.search' | t }}</span>
                 <span class="svg-wrapper">
-                  <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false">
-                    <use href="#icon-search"></use>
-                  </svg>
+                  {{
+                    'icon-search.svg'
+                    | inline_asset_content
+                    | replace: 'icon icon-search', 'modal__toggle-open icon icon-search'
+                  }}
                 </span>
                 <span class="svg-wrapper">
-                  <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false">
-                    <use href="#icon-close"></use>
-                  </svg>
+                  {{
+                    'icon-close.svg'
+                    | inline_asset_content
+                    | replace: 'icon icon-close', 'modal__toggle-close icon icon-close'
+                  }}
                 </span>
               </summary>
               <div class="search-modal modal__content" tabindex="-1">
@@ -317,11 +321,7 @@
           </details-modal>
 
           <a href="{{ routes.account_url }}" class="header__icon header__icon--account link focus-inset">
-            <span class="svg-wrapper">
-              <svg class="icon icon-account" aria-hidden="true" focusable="false">
-                <use href="#icon-account"></use>
-              </svg>
-            </span>
+            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
             <span class="visually-hidden">{{ 'customer.account_fallback' | t }}</span>
           </a>
 
@@ -331,17 +331,9 @@
             id="cart-icon-bubble"
           >
             {% if cart == empty %}
-              <span class="svg-wrapper">
-                <svg class="icon icon-cart-empty" aria-hidden="true" focusable="false">
-                  <use href="#icon-cart-empty"></use>
-                </svg>
-              </span>
+              <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
             {% else %}
-              <span class="svg-wrapper">
-                <svg class="icon icon-cart" aria-hidden="true" focusable="false">
-                  <use href="#icon-cart"></use>
-                </svg>
-              </span>
+              <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
             {% endif %}
             <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
             {%- if cart.item_count > 0 -%}
@@ -541,17 +533,9 @@
           id="cart-icon-bubble"
         >
           {% if cart == empty %}
-            <span class="svg-wrapper">
-              <svg class="icon icon-cart-empty" aria-hidden="true" focusable="false">
-                <use href="#icon-cart-empty"></use>
-              </svg>
-            </span>
+            <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
           {% else %}
-            <span class="svg-wrapper">
-              <svg class="icon icon-cart" aria-hidden="true" focusable="false">
-                <use href="#icon-cart"></use>
-              </svg>
-            </span>
+            <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
           {% endif %}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
           {%- if cart.item_count > 0 -%}
