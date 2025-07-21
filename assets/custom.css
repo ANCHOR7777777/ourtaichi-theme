@@ -102,17 +102,9 @@ nav[aria-label="Main navigation"] {
   }
 }
 
-/* Mobile: center logo between menu & icons */
+/* Mobile: hide logo for cleaner layout */
 @media screen and (max-width: 749px) {
   .header__heading {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* Ensure icons/menu stay clickable */
-  .header__icons {
-    position: relative;
-    z-index: 2;
+    display: none;
   }
 }
