@@ -234,40 +234,24 @@
         {% render 'header-menu-split', menu: linklists['main-menu-right'] %}
         <div class="header__icons">
           <details-modal class="header__search">
-            <summary
-              class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
-              aria-haspopup="dialog"
-              aria-label="{{ 'general.search.search' | t }}"
-            >
+            <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
               <span>
-                <span class="svg-wrapper">
-                  <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                    <use href="#icon-search"></use>
-                  </svg>
+                <span class.svg-wrapper>
+                  <svg class="icon icon-search" aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
                 </span>
                 <span class="visually-hidden">{{ 'general.search.search' | t }}</span>
               </span>
             </summary>
-            <div
-              class="search-modal modal__content"
-              role="dialog"
-              aria-modal="true"
-              aria-label="{{ 'general.search.search' | t }}"
-            >
+            <div class="search-modal modal__content" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
               <div class="modal-overlay"></div>
               <div class="search-modal__content-wrapper" tabindex="-1">
                 <div class="search-modal__content gradient">
                   <div class="search-modal__form">
-                    <form
-                      action="{{ routes.search_url }}"
-                      method="get"
-                      role="search"
-                      class="search search-modal__form"
-                    >
+                    <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                       <div class="field">
                         <input
                           class="search__input field__input"
-                          id="Search-In-Modal-2"
+                          id="Search-In-Modal-3"
                           type="search"
                           name="q"
                           value="{{ search.terms | escape }}"
@@ -285,97 +269,66 @@
                             spellcheck="false"
                           {% endif %}
                         >
-                        <label class="field__label" for="Search-In-Modal-2">{{ 'general.search.search' | t }}</label>
+                        <label class="field__label" for="Search-In-Modal-3">{{ 'general.search.search' | t }}</label>
                         <input type="hidden" name="options[prefix]" value="last">
                         <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                          <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                            <use href="#icon-search"></use>
-                          </svg>
+                          <svg class="icon icon-search" aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
                         </button>
                       </div>
-
-                      {%- if settings.predictive_search_enabled -%}
+                      {% if settings.predictive_search_enabled %}
                         <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
                           <div class="predictive-search__loading-state">
-                            <svg
-                              aria-hidden="true"
-                              focusable="false"
-                              class="spinner"
-                              viewBox="0 0 66 66"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
+                            <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                               <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                             </svg>
                           </div>
                         </div>
                         <span class="predictive-search-status visually-hidden" role="status" aria-live="polite"></span>
-                      {%- endif -%}
+                      {% endif %}
                     </form>
                   </div>
-                  <button
-                    type="button"
-                    class="modal__close-button link link--text focus-inset"
-                    aria-label="{{ 'accessibility.close' | t }}"
-                  >
-                    <svg class="icon icon-close" aria-hidden="true" focusable="false">
-                      <use href="#icon-close"></use>
-                    </svg>
+                  <button type="button" class="modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
+                    <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg>
                   </button>
                 </div>
               </div>
             </div>
           </details-modal>
-
-          {%- if shop.customer_accounts_enabled -%}
-            <a
-              href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-              class="header__icon header__icon--account link focus-inset"
-              rel="nofollow"
-            >
+          {% if shop.customer_accounts_enabled %}
+            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__icon header__icon--account link focus-inset" rel="nofollow">
               <span class="svg-wrapper">
-                <svg class="icon icon-account" aria-hidden="true" focusable="false">
-                  <use href="#icon-account"></use>
-                </svg>
+                <svg class="icon icon-account" aria-hidden="true" focusable="false"><use href="#icon-account"></use></svg>
               </span>
               <span class="visually-hidden">
-                {%- liquid
+                {% liquid
                   if customer
                     echo 'customer.account_fallback' | t
                   else
                     echo 'customer.log_in' | t
                   endif
-                -%}
+                %}
               </span>
             </a>
-          {%- endif -%}
-
-          <a
-            href="{{ routes.cart_url }}"
-            class="header__icon header__icon--cart link focus-inset"
-            id="cart-icon-bubble"
-          >
+          {% endif %}
+          <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
             {% if cart == empty %}
               <span class="svg-wrapper">
-                <svg class="icon icon-cart-empty" aria-hidden="true" focusable="false">
-                  <use href="#icon-cart-empty"></use>
-                </svg>
+                <svg class="icon icon-cart-empty" aria-hidden="true" focusable="false"><use href="#icon-cart-empty"></use></svg>
               </span>
             {% else %}
               <span class="svg-wrapper">
-                <svg class="icon icon-cart" aria-hidden="true" focusable="false">
-                  <use href="#icon-cart"></use>
-                </svg>
+                <svg class="icon icon-cart" aria-hidden="true" focusable="false"><use href="#icon-cart"></use></svg>
               </span>
             {% endif %}
             <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-            {%- if cart != empty -%}
+            {% if cart != empty %}
               <div class="cart-count-bubble">
-                {%- if cart.item_count < 100 -%}
+                {% if cart.item_count < 100 %}
                   <span aria-hidden="true">{{ cart.item_count }}</span>
-                {%- endif -%}
+                {% endif %}
                 <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
               </div>
-            {%- endif -%}
+            {% endif %}
           </a>
         </div>
       </div>
