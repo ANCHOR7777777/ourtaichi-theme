@@ -94,3 +94,8 @@ nav[aria-label="Main navigation"] {
 .header__icon:hover {
   color: #000; /* darken on hover for feedback */
 }
+
+/* Spacing: add gap between nav and icons */
+.header__icons {
+  margin-left: 3rem; /* adjust as needed */
+}
