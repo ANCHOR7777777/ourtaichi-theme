@@ -262,7 +262,11 @@
                 aria-label="{{ 'general.search.search' | t }}"
               >
                 <span>
-                  <span class="svg-wrapper">{%- render 'icon-search' -%}</span>
+                  <span class="svg-wrapper">
+                    <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                      <use href="#icon-search"></use>
+                    </svg>
+                  </span>
                   <span class="visually-hidden">{{ 'general.search.search' | t }}</span>
                 </span>
               </summary>
@@ -307,7 +311,7 @@
                           <input type="hidden" name="options[prefix]" value="last">
                           <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                             <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                              <use href="#icon-search">
+                              <use href="#icon-search"></use>
                             </svg>
                           </button>
                         </div>
@@ -364,11 +368,19 @@
                     {%- if customer and customer.has_avatar? -%}
                       {{ customer | avatar }}
                     {%- else -%}
-                      <span class="svg-wrapper">{% render 'icon-account' %}</span>
+                      <span class="svg-wrapper">
+                        <svg class="icon icon-account" aria-hidden="true" focusable="false">
+                          <use href="#icon-account"></use>
+                        </svg>
+                      </span>
                     {%- endif -%}
                   </account-icon>
                 {%- else -%}
-                  <span class="svg-wrapper">{% render 'icon-account' %}</span>
+                  <span class="svg-wrapper">
+                    <svg class="icon icon-account" aria-hidden="true" focusable="false">
+                      <use href="#icon-account"></use>
+                    </svg>
+                  </span>
                 {%- endif -%}
                 <span class="visually-hidden">
                   {%- liquid
@@ -395,9 +407,17 @@
               id="cart-icon-bubble"
             >
               {% if cart == empty %}
-                <span class="svg-wrapper">{% render 'icon-cart-empty' %}</span>
+                <span class="svg-wrapper">
+                  <svg class="icon icon-cart-empty" aria-hidden="true" focusable="false">
+                    <use href="#icon-cart-empty"></use>
+                  </svg>
+                </span>
               {% else %}
-                <span class="svg-wrapper">{% render 'icon-cart' %}</span>
+                <span class="svg-wrapper">
+                  <svg class="icon icon-cart" aria-hidden="true" focusable="false">
+                    <use href="#icon-cart"></use>
+                  </svg>
+                </span>
               {% endif %}
               <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
               {%- if cart != empty -%}
@@ -453,7 +473,11 @@
             aria-label="{{ 'general.search.search' | t }}"
           >
             <span>
-              <span class="svg-wrapper">{%- render 'icon-search' -%}</span>
+              <span class="svg-wrapper">
+                <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                  <use href="#icon-search"></use>
+                </svg>
+              </span>
               <span class="visually-hidden">{{ 'general.search.search' | t }}</span>
             </span>
           </summary>
@@ -498,7 +522,7 @@
                       <input type="hidden" name="options[prefix]" value="last">
                       <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                         <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                          <use href="#icon-search">
+                          <use href="#icon-search"></use>
                         </svg>
                       </button>
                     </div>
@@ -555,11 +579,19 @@
                 {%- if customer and customer.has_avatar? -%}
                   {{ customer | avatar }}
                 {%- else -%}
-                  <span class="svg-wrapper">{% render 'icon-account' %}</span>
+                  <span class="svg-wrapper">
+                    <svg class="icon icon-account" aria-hidden="true" focusable="false">
+                      <use href="#icon-account"></use>
+                    </svg>
+                  </span>
                 {%- endif -%}
               </account-icon>
             {%- else -%}
-              <span class="svg-wrapper">{% render 'icon-account' %}</span>
+              <span class="svg-wrapper">
+                <svg class="icon icon-account" aria-hidden="true" focusable="false">
+                  <use href="#icon-account"></use>
+                </svg>
+              </span>
             {%- endif -%}
             <span class="visually-hidden">
               {%- liquid
@@ -586,9 +618,17 @@
           id="cart-icon-bubble"
         >
           {% if cart == empty %}
-            <span class="svg-wrapper">{% render 'icon-cart-empty' %}</span>
+            <span class="svg-wrapper">
+              <svg class="icon icon-cart-empty" aria-hidden="true" focusable="false">
+                <use href="#icon-cart-empty"></use>
+              </svg>
+            </span>
           {% else %}
-            <span class="svg-wrapper">{% render 'icon-cart' %}</span>
+            <span class="svg-wrapper">
+              <svg class="icon icon-cart" aria-hidden="true" focusable="false">
+                <use href="#icon-cart"></use>
+              </svg>
+            </span>
           {% endif %}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
           {%- if cart != empty -%}
