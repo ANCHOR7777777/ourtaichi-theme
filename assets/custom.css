@@ -80,12 +80,17 @@ nav[aria-label="Main navigation"] {
   }
 }
 
+/* --- Header icons: consistent sizing --- */
 .header__icon .icon {
   width: 2.2rem;
   height: 2.2rem;
 }
 
-.header__icon--cart .icon {
-  transform: scale(1.33);
-  transform-origin: center;
+/* Softer header icon color */
+.header__icon {
+  color: #5f5f5f; /* medium grey instead of pure black */
+}
+
+.header__icon:hover {
+  color: #000; /* darken on hover for feedback */
 }
