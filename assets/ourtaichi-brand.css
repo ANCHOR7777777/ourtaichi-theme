@@ -1,4 +1,4 @@
-/* Ourtaichi Brand CSS - Final Fix */
+/* Ourtaichi Brand CSS - Final Version */
 .header--middle-center {
     display: flex;
     justify-content: space-between;
@@ -6,14 +6,14 @@
     width: 100%;
 }
 
-/* Left Menu */
+/* 1. Left Menu */
 .header--middle-center .header__left-menu {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
-/* Center Logo */
+/* 2. Center Logo */
 .header--middle-center .header__heading {
     flex-shrink: 0;
     margin: 0 2rem;
@@ -32,29 +32,20 @@
     object-fit: cover;
 }
 
-/* Right Group (Menu + Icons) */
+/* 3. Right Group (Menu + Icons) */
 .header--middle-center .header__right-group {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align content to the start */
+    justify-content: flex-start;
 }
 
-/* Ensure the menu and icons are spaced out */
-.header--middle-center .header__right-group > nav {
-    margin-right: 2rem;
+.header--middle-center .header__right-group nav {
+    margin-right: 1.5rem; /* Space between menu and icons */
 }
 
-/* Icons Container */
 .header--middle-center .header__icons {
-    display: flex !important; /* Override base.css */
+    display: flex;
     align-items: center;
-    gap: 1.5rem;
-    justify-self: start; /* Override base.css */
-    padding-right: 0; /* Override base.css */
-}
-
-/* Individual Icons */
-.header--middle-center .header__icon {
-    display: block !important;
+    gap: 1.5rem; /* Space between icons */
 } 
