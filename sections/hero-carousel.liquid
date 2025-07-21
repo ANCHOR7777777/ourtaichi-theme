@@ -52,23 +52,30 @@
   class="section"
   data-autoplay="{{ section.settings.autoplay }}"
   data-speed="{{ section.settings.speed }}"
-  {% if section.settings.autoplay %}
-    onmouseenter="this.querySelector('.hero-carousel-scroller').classList.remove('playing')"
-    onmouseleave="this.querySelector('.hero-carousel-scroller').classList.add('playing')"
-  {% endif %}
-  aria-live="polite">
+  aria-live="polite"
+>
   <div class="hero-carousel-container">
     <div class="hero-carousel-scroller">
       {%- if section.blocks.size > 0 -%}
         {%- for block in section.blocks -%}
           <div class="hero-carousel-slide" {{ block.shopify_attributes }}>
             {%- if block.settings.image != blank -%}
-              {%- assign image_alt = block.settings.image.alt | default: section.settings.title | default: 'Slide' | escape -%}
+              {%- assign image_alt = block.settings.image.alt
+                | default: section.settings.title
+                | default: 'Slide'
+                | escape
+              -%}
+              {% assign fp = 'auto' -%}
+              {%- assign dec = 'auto' -%}
               {%- if forloop.first -%}
-                {{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: image_alt, fetchpriority: 'high', decoding: 'async' }}
-              {%- else -%}
-                {{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: image_alt }}
-              {%- endif -%}
+                {%- assign fp = 'high' -%}
+                {%- assign dec = 'async' -%}
+              {%- endif %}
+              {{
+                block.settings.image
+                | image_url: width: 1600
+                | image_tag: loading: 'lazy', alt: image_alt, fetchpriority: fp, decoding: dec
+              }}
             {%- else -%}
               {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
