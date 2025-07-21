@@ -3666,3 +3666,47 @@ details-disclosure > details {
     fill: rgb(var(--color-foreground)) !important;
   }
 }
+
+/* Ourtaichi Brand - Final Fix (Grid Layout) */
+@media screen and (min-width: 990px) {
+  .header--middle-center .header__left-menu {
+    grid-area: navigation;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .header--middle-center .header__right-group {
+    grid-area: icons;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header--middle-center .header__heading-logo-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .header--middle-center .header__heading-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .header--middle-center .header__right-group nav {
+    margin-right: 1.5rem;
+  }
+  
+  .header--middle-center .header__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .header--middle-center .header__icon .icon path {
+    fill: rgb(var(--color-foreground));
+  }
+}
