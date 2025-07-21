@@ -3767,4 +3767,10 @@ details-disclosure > details {
     width: 2.2rem;
     height: 2.2rem;
   }
+  
+  .header--middle-center .header__icon .icon path,
+  .header--middle-center .header__icon .icon circle,
+  .header--middle-center .header__icon .icon rect {
+    fill: currentColor !important;
+  }
 }
