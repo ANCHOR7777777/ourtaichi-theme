@@ -1,4 +1,4 @@
-/* Ourtaichi Brand CSS */
+/* Ourtaichi Brand CSS - Final Fix */
 .header--middle-center {
     display: flex;
     justify-content: space-between;
@@ -6,51 +6,55 @@
     width: 100%;
 }
 
-.header__left-menu,
-.header__right-group {
+/* Left Menu */
+.header--middle-center .header__left-menu {
     flex: 1;
     display: flex;
-    align-items: center;
-}
-
-.header__left-menu {
     justify-content: flex-end;
 }
 
-.header__right-group {
-    justify-content: flex-start;
-    display: flex; /* Ensure flex is explicitly set */
-    align-items: center; /* Vertically align items */
-}
-
-.header__right-group .header__inline-menu {
-    margin-right: 1.5rem; /* Add some space between menu and icons */
-}
-
-.header__icons {
-    display: flex !important; /* Force display flex to override other styles */
-    align-items: center;
-    gap: 1.5rem; /* Adjust gap between icons */
-}
-
-.header__icon {
-    display: block !important; /* Ensure all icons are visible */
-}
-
-.header__heading {
+/* Center Logo */
+.header--middle-center .header__heading {
     flex-shrink: 0;
     margin: 0 2rem;
 }
 
-.header__heading-logo-wrapper {
+.header--middle-center .header__heading-logo-wrapper {
     width: 80px !important;
     height: 80px !important;
     border-radius: 50%;
     overflow: hidden;
 }
 
-.header__heading-logo {
+.header--middle-center .header__heading-logo {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
+}
+
+/* Right Group (Menu + Icons) */
+.header--middle-center .header__right-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the start */
+}
+
+/* Ensure the menu and icons are spaced out */
+.header--middle-center .header__right-group > nav {
+    margin-right: 2rem;
+}
+
+/* Icons Container */
+.header--middle-center .header__icons {
+    display: flex !important; /* Override base.css */
+    align-items: center;
+    gap: 1.5rem;
+    justify-self: start; /* Override base.css */
+    padding-right: 0; /* Override base.css */
+}
+
+/* Individual Icons */
+.header--middle-center .header__icon {
+    display: block !important;
 } 
