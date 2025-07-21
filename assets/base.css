@@ -3643,25 +3643,19 @@ details-disclosure > details {
   }
 
   .header--middle-center .header__icons {
-    /* --- DEBUGGING STYLES V2 --- */
-    display: flex !important;
+    display: flex;
     align-items: center;
-    gap: 1rem;
-    background-color: red !important; /* Container: RED */
-    padding: 5px !important;
-    z-index: 9999 !important;
+    gap: 1.5rem;
   }
 
   .header--middle-center .header__icon {
-    display: block !important; /* Individual Icon: GREEN */
-    background-color: limegreen !important;
-    padding: 5px !important;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent icons from shrinking */
   }
-  
+
   .header--middle-center .header__icon .icon {
-    background-color: yellow !important; /* SVG itself: YELLOW */
     width: 2.2rem;
     height: 2.2rem;
+    fill: currentColor; /* Make icons visible */
+    stroke: currentColor; /* Make icons visible */
   }
 }
