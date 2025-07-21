@@ -1,40 +1,87 @@
 :root {
-  --brand-accent: #D2A679;
+  --color-base-text: #333333;
+  --color-base-background: #FFFFFF;
+  --color-accent-1: #96a8a0;
+  --color-accent-2: #D2A679;
+  --font-body-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: var(--color-base-background);
+  color: var(--color-base-text);
+  font-family: var(--font-body-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-family);
+  font-weight: normal;
+  color: #000;
 }
 
 .button--primary {
-  background-color: var(--brand-accent);
+  background-color: var(--color-accent-1);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.course-list {
-  display: grid;
-  gap: 2rem;
+.button--primary:hover {
+  background-color: var(--color-accent-2);
 }
 
-.course-card {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  border: 1px solid rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  border-radius: 8px;
-  transition: box-shadow 0.2s ease-in-out;
+.button--secondary {
+  background-color: transparent;
+  color: var(--color-accent-1);
+  border: 1px solid var(--color-accent-1);
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-.course-card:hover {
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.button--secondary:hover {
+  background-color: var(--color-accent-1);
+  color: #FFFFFF;
 }
 
-.course-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
+.header--middle-left .header__inline-menu {
+  display: none;
+}
+nav[aria-label="Main navigation"] {
+    display: contents;
+}
+.header__heading {
+    grid-area: logo;
+}
+@media screen and (min-width: 990px) {
+  .header--has-menu .header__grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "nav-left logo nav-right";
+    align-items: center;
+  }
+  
+  .header--middle-center .header__grid {
+     grid-template-areas: "nav-left logo nav-right";
+  }
+
+  .header--has-menu .header__inline-menu {
+    display: block;
+  }
+
+  .header__inline-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .header__icons {
+    justify-self: end;
+  }
 }
 
-/* Unify header icon sizes */
-.header__icon .icon,
-.header__icon--cart .icon {
+/* --- Header icons: consistent sizing --- */
+.header__icon .icon {
   width: 2rem;
   height: 2rem;
-} 
+}
