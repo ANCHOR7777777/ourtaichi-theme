@@ -3643,8 +3643,14 @@ details-disclosure > details {
   }
 
   .header--middle-center .header__icons {
-    display: flex;
+    /* --- DEBUGGING STYLES --- */
+    display: flex !important;
     align-items: center;
     gap: 1.5rem;
+    background-color: red !important;
+    border: 3px solid blue !important;
+    padding: 1rem !important;
+    z-index: 9999 !important;
+    /* --- END DEBUGGING STYLES --- */
   }
 }
