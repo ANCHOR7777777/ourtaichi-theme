@@ -3774,3 +3774,13 @@ details-disclosure > details {
     fill: currentColor !important;
   }
 }
+
+@media screen and (min-width: 990px) {
+  .header--middle-center .header__icon .icon path,
+  .header--middle-center .header__icon .icon circle,
+  .header--middle-center .header__icon .icon rect {
+    fill: transparent !important;
+    stroke: currentColor !important;
+    stroke-width: 1.5 !important;
+  }
+}
