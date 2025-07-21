@@ -199,11 +199,11 @@
     {%- endif -%}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
-      <div class="header__left-menu">
+      <div class="header__left-menu" style="grid-area: navigation;">
         {% render 'header-menu-split', menu: linklists['main-menu-left'] %}
       </div>
 
-      <div class="header__heading">
+      <div class="header__heading" style="grid-area: heading;">
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
           {%- if settings.logo != blank -%}
             <div class="header__heading-logo-wrapper">
@@ -230,7 +230,7 @@
         </a>
       </div>
 
-      <div class="header__right-group">
+      <div class="header__right-group" style="grid-area: icons;">
         {% render 'header-menu-split', menu: linklists['main-menu-right'] %}
         <div class="header__icons">
           <details-modal class="header__search">
