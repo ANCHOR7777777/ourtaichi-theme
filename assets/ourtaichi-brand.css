@@ -120,6 +120,13 @@ div[id^="collection-"] .card__content {
   }
 } 
 
+/* 
+  OurTaichi Brand Styles - Header
+  ---
+  This section implements the centered logo with split navigation.
+  It uses a 3-column grid to ensure perfect alignment.
+*/
+
 .header--middle-center {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -127,47 +134,36 @@ div[id^="collection-"] .card__content {
   gap: 2rem;
 }
 
-.header--middle-center .header__heading {
-  grid-column: 2;
-  justify-self: center;
-}
-
-.header--middle-center .header__inline-menu:first-of-type {
-  grid-column: 1;
+/* 1. Left Menu */
+.header--middle-center .header__inline-menu {
   justify-self: end;
 }
 
-.header--middle-center .header-right-group {
-  grid-column: 3;
-  justify-self: start;
-  display: flex;
-  align-items: center;
-  gap: 2.5rem; /* Increased gap for better spacing */
-}
-
-.header__heading-logo-wrapper {
-  display: inline-block; /* Changed for better centering behavior */
-  vertical-align: middle;
+/* 2. Centered Logo */
+.header--middle-center .header__heading {
+  justify-self: center;
 }
 
 .header__heading-logo {
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 100px; /* Adjusted size */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100px;
   height: 100px;
-  display: block; /* Ensure it behaves as a block element for sizing */
 }
 
-.header--middle-center .header__icons {
+/* 3. Right Group (Menu + Icons) */
+.header-right-group {
+  justify-self: start;
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Spacing between icons */
+  gap: 2rem; /* Space between right menu and icons */
 }
 
-.header--middle-center .list-menu--inline {
-  gap: 2rem;
+.header__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between individual icons */
 }
 
 /* Ensure icons are a consistent size */
@@ -179,4 +175,84 @@ div[id^="collection-"] .card__content {
 .cart-count-bubble {
     top: -0.5rem;
     right: -0.8rem;
+} 
+
+/* Ourtaichi Brand CSS */
+.header--middle-center .header__heading {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+.header-right-group {
+    display: flex;
+    align-items: center;
+}
+.header__icons {
+    display: flex;
+    align-items: center;
+}
+.header__icon--search {
+    display: none;
+}
+.header-right-group .list-menu--inline {
+    display: flex;
+    align-items: center;
+}
+.header-right-group > nav {
+    margin-right: 15px;
+}
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+.header--middle-left {
+    grid-template-columns: auto 1fr;
+}
+.header__heading {
+    justify-self: center;
+}
+.header__icons {
+    justify-self: end;
+}
+.header--middle-center .header__heading {
+    position: static;
+    transform: none;
+    justify-self: center;
+}
+.header-menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.header-menu-left, .header-menu-right {
+    display: flex;
+    align-items: center;
+}
+.header-menu-right .header__icons {
+    margin-left: 20px;
+}
+
+.header--middle-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header--middle-center .header__heading {
+    flex-grow: 0;
+    margin: 0 20px;
+}
+
+.header--middle-center .header-menu-split-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header--middle-center .header-right-group {
+    order: 1;
 } 
