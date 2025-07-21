@@ -84,3 +84,8 @@ nav[aria-label="Main navigation"] {
   width: 2.2rem;
   height: 2.2rem;
 }
+
+.header__icon--cart .icon {
+  transform: scale(1.33);
+  transform-origin: center;
+}
