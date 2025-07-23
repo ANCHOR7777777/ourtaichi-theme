@@ -43,6 +43,26 @@
     },
     "founder_intro": {
       "type": "image-with-text",
+      "blocks": {
+        "heading_fyzU7U": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>About the Master</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_DRKi8P": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Taoist Name:Zenji</strong></h2><ul><li><strong>Lineage Holder of Wudang Kung FuPresident, </strong></li><li><strong>Wudang Taiji Kung Fu AcademyChief Coach, </strong></li><li><strong>Wudang Taoist Martial Arts Troupe (2009 – 2020)</strong></li><li><strong>Recognised Guardian of Traditional Chinese Culture</strong></li></ul>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fyzU7U",
+        "text_DRKi8P"
+      ],
       "settings": {
         "image": "shopify://shop_images/WechatIMG580.jpg",
         "height": "adapt",
