@@ -114,30 +114,3 @@ nav[aria-label="Main navigation"] {
     display: none;
   }
 }
-
-/* ---------- FIX search modal broken layout ---------- */
-.search-modal {
-  position: fixed !important;
-  inset: 0 !important;                   /* top/right/bottom/left = 0 */
-  z-index: 9999 !important;
-  display: flex !important;
-  align-items: flex-start !important;    /* 使面板从顶部出现 */
-  justify-content: center !important;
-}
-
-.search-modal__content-wrapper {
-  width: 100%;
-  max-width: 600px;                     /* 与 Dawn 原版一致 */
-  margin-top: 8rem;                     /* 离顶部一点距离，可视需求调整 */
-  background: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,.15);
-}
-
-/* 如果遮罩无法点击关闭，可保证 overlay 占满全屏且在面板下方 */
-.modal-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 9998 !important;
-}
