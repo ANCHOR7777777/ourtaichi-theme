@@ -137,13 +137,13 @@
     },
     "content_for_index": [],
     "blocks": {
-      "13354311585254714301": {
-        "type": "shopify://apps/ldt-online-courses/blocks/embed/3b45b734-822f-4dc2-9476-ee42851c1691",
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
       },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+      "13354311585254714301": {
+        "type": "shopify://apps/ldt-online-courses/blocks/embed/3b45b734-822f-4dc2-9476-ee42851c1691",
         "disabled": false,
         "settings": {}
       }
