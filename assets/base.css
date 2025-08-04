@@ -2613,9 +2613,11 @@ menu-drawer + .header__search {
   display: none;
 }
 
-.header__search {
-  display: inline-flex;
-  line-height: 0;
+@media screen and (min-width: 990px) {
+  .header__search {
+    display: inline-flex;
+    line-height: 0;
+  }
 }
 
 .header--top-center > .header__search {
