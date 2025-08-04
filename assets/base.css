@@ -3784,4 +3784,13 @@ details-disclosure > details {
   .header--middle-center .header__icon .icon rect {
     fill: currentColor !important;
   }
+  .search-modal__content-wrapper > .search-modal__content {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
 }
