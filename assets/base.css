@@ -3840,3 +3840,7 @@ details-disclosure > details {
   right: var(--inputs-border-width);
   top: var(--inputs-border-width);
 }
+
+.search-modal__form .search__button {
+  display: none;
+}
