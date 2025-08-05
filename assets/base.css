@@ -3844,3 +3844,8 @@ details-disclosure > details {
 .search-modal__form .search__button {
   display: none;
 }
+
+.predictive-search:empty,
+predictive-search[loading] .predictive-search {
+  display: none !important;
+}
