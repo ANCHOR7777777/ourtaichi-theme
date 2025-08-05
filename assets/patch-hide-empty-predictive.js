@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const init = () => {
     document.querySelectorAll('predictive-search').forEach(ps => {
       const list = ps.querySelector('.predictive-search');
-      if (!list) return;
-      const hideIfEmpty = () => {
-        const hasItems = !!list.querySelector('li');
-        list.style.display = hasItems ? '' : 'none';
+      const input = ps.querySelector('input[type="search"]');
+      if (!list || !input) return;
+      const toggle = () => {
+        const show = input.value.trim().length > 0 && list.querySelector('li');
+        list.style.display = show ? '' : 'none';
       };
-      // initial check
-      hideIfEmpty();
-      // observe mutations inside list
-      const mo = new MutationObserver(hideIfEmpty);
+      input.addEventListener('input', toggle);
+      const mo = new MutationObserver(toggle);
       mo.observe(list, {childList:true, subtree:true});
+      toggle();
     });
   };
   if (customElements.get('predictive-search')) {
