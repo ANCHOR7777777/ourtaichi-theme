@@ -3817,3 +3817,26 @@ details-disclosure > details {
 .search-modal__form {
   position: relative;
 }
+
+.search-modal__form .field {
+  position: relative;
+}
+
+.search-modal__form .field__input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.search-modal__form predictive-search {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.1rem);
+  width: 100%; 
+}
+
+.search-modal__form .search__button,
+.search-modal__form .search__reset {
+  position: absolute;
+  right: var(--inputs-border-width);
+  top: var(--inputs-border-width);
+}
