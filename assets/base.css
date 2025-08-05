@@ -3845,7 +3845,6 @@ details-disclosure > details {
   display: none;
 }
 
-.predictive-search:empty,
 predictive-search[loading] .predictive-search {
   display: none !important;
 }
