@@ -3845,6 +3845,7 @@ details-disclosure > details {
   display: none;
 }
 
+predictive-search:not([open]) .predictive-search,
 predictive-search[loading] .predictive-search {
   display: none !important;
 }
