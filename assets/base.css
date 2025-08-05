@@ -2675,6 +2675,11 @@ details[open] .modal-overlay::after {
   transition: opacity 0.2s ease-in-out;
 }
 
+details[open] > .search-modal {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .search-modal__content {
   display: flex;
   align-items: center;
@@ -3784,7 +3789,22 @@ details-disclosure > details {
   .header--middle-center .header__icon .icon rect {
     fill: currentColor !important;
   }
-  .search-modal__content-wrapper > .search-modal__content {
+}
+
+
+
+.search-modal__content-wrapper {
+  width: 90%;
+  max-width: 74rem;
+  background-color: rgb(var(--color-background));
+  padding: 4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+
+/* Final fix for nested search modal content */
+.search-modal__content-wrapper > .search-modal__content {
   position: static;
   width: auto;
   height: auto;
@@ -3793,4 +3813,7 @@ details-disclosure > details {
   border: none;
   box-shadow: none;
 }
+
+.search-modal__form {
+  position: relative;
 }
