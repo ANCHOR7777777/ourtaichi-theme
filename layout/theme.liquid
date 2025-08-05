@@ -272,9 +272,9 @@
       }
     {% endstyle %}
 
-    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" as="style">
+    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
     {{ 'custom.css' | asset_url | stylesheet_tag }}
-    <link href="{{ 'ourtaichi-brand.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+    
     <noscript>{{ 'base.css' | asset_url | stylesheet_tag }}</noscript>
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -403,3 +403,4 @@
     <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
+
