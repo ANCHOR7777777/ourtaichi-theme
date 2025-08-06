@@ -22,10 +22,10 @@
         "row_RUPLCM": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
+            "caption": "OUR STORY",
+            "heading": "Meet Zenji",
+            "text": "<p>Born with a warrior’s spirit in Shaolin (1998) and forged on Wudang’s misty peaks since 2003, Master Zenji has spent two decades reviving 700-year Tai Chi wisdom and sharing it in 10 + countries.</p>",
+            "button_label": "Learn More",
             "button_link": ""
           }
         },
