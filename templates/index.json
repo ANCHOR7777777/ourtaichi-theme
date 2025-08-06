@@ -118,14 +118,14 @@
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "blog": "news",
-        "post_limit": 3,
+        "post_limit": 4,
         "heading": "Our Community",
         "heading_size": "h1",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "show_view_all": true,
         "show_image": true,
         "show_date": true,
-        "show_author": false,
+        "show_author": true,
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
