@@ -27,17 +27,18 @@
             "heading": "Meet Zenji",
             "text": "<p>Born in <strong>1986</strong>, Zenji entered Shaolin Temple at age 12 (1998) and, by 2003, was already honing Wudang Tai Chi high in the misty peaks. Two decades on, he leads the Wudang Tai Chi Kung Fu Academy and shares 700-year wisdom worldwide.</p>",
             "button_label": "Learn More",
-            "button_link": ""
+            "button_link": "shopify://blogs/news/meet-zenji-custodian-of-wudang-wisdom"
           }
         },
         "row_L9bwTG": {
           "type": "row",
           "settings": {
+            "image": "shopify://shop_images/WechatIMG569.jpg",
             "caption": "MOVEMENT MEDICINE",
             "heading": "Practical Wisdom",
             "text": "<p>Tai Chi isn’t a mountain secret—it’s profoundly practical. We distil ancient breathwork and flowing forms into bite-sized “movement medicine” you can weave into a coffee break, steadying body and mind amid modern stress.</p>",
             "button_label": "Explore Our Method",
-            "button_link": ""
+            "button_link": "shopify://blogs/news/practical-wisdom"
           }
         },
         "row_9yqBKq": {
