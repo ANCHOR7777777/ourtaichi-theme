@@ -45,16 +45,16 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
@@ -106,8 +106,8 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
         "description",
+        "buy_buttons",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -122,7 +122,7 @@
         "media_fit": "contain",
         "gallery_layout": "stacked",
         "mobile_thumbnails": "hide",
-        "media_position": "left",
+        "media_position": "right",
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
@@ -190,11 +190,27 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "1754748592cc2e64a3": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_awVHen": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_awVHen"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "multicolumn",
-    "related-products"
+    "related-products",
+    "1754748592cc2e64a3"
   ]
 }
