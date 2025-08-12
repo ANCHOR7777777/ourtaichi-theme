@@ -12,29 +12,36 @@
     "hero_carousel": {
       "type": "hero-carousel",
       "blocks": {
-        "image_picker_Nkgqdq": {
+        "image_picker_rcWF9z": {
           "type": "image_picker",
           "settings": {
-            "image": "shopify://shop_images/WechatIMG564.jpg"
+            "image": "shopify://shop_images/WechatIMG193_33026ba3-e04a-4e2f-9a7a-9d6b97b652ea.jpg"
           }
         },
-        "image_picker_f7QJbA": {
+        "image_picker_PL8PjN": {
           "type": "image_picker",
           "settings": {
-            "image": "shopify://shop_images/WechatIMG570.jpg"
+            "image": "shopify://shop_images/WechatIMG192_f4ded77c-7659-4fe7-99c2-8dabddf92c83.jpg"
           }
         },
-        "image_picker_HUtH3U": {
+        "image_picker_EkWHtm": {
           "type": "image_picker",
           "settings": {
-            "image": "shopify://shop_images/WechatIMG566.jpg"
+            "image": "shopify://shop_images/WechatIMG570_e5e816d4-1822-4d59-8d34-a20ece7219d4.jpg"
+          }
+        },
+        "image_picker_99CjaD": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify://shop_images/WechatIMG566_13f0b1ff-a746-4b1f-bc3f-efb95faaa0a4.jpg"
           }
         }
       },
       "block_order": [
-        "image_picker_Nkgqdq",
-        "image_picker_f7QJbA",
-        "image_picker_HUtH3U"
+        "image_picker_rcWF9z",
+        "image_picker_PL8PjN",
+        "image_picker_EkWHtm",
+        "image_picker_99CjaD"
       ],
       "settings": {
         "speed": 40,
