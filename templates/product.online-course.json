@@ -116,18 +116,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "review_widget_placeholder": {
-      "type": "review-widget",
-      "settings": {
-        "title": "Customer Reviews",
-        "enable_stars": true
-      }
     }
   },
   "order": [
     "main",
-    "related-products",
-    "review_widget_placeholder"
+    "related-products"
   ]
 }
